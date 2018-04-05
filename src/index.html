@@ -1,6 +1,22 @@
 //= template/header.html
 <!-- START CONTENT  -->
 
+
+    <svg class="hidden">
+        <defs>
+            <symbol id="icon-arrow" viewBox="0 0 24 24">
+                <title>arrow</title>
+                <polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 " />
+            </symbol>
+            <symbol id="icon-drop" viewBox="0 0 24 24">
+                <title>drop</title>
+                <path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z" />
+                <path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z" />
+            </symbol>
+        </defs>
+    </svg>
+    <main>
+
 <header class="header">
     <div class="container-fluid">
         <div class="row">
@@ -47,25 +63,30 @@
     </div>
 </section>
 
+
 <section class="cardsWrap">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12">
-                <a href="#" class="card">
-                    <div class="card__info">
-                        <p class="card__title">Онлайн-страхование,</p>    
-                        <p class="card__text">выезжающих за рубеж <br>
-                                и в поездках по России (ВЗР)</p>
-                    </div>
-                    <div class="card__img" style="background-image: url(img/world.jpg)"></div>
+
+                <a href="#" class="tilter tilter--1 card">
+                    <figure class="tilter__figure">
+                        <div class="tilter__image card__img" style="background-image: url(img/world.jpg)"></div>
+                        <div class="card__info">
+                            <h3 class="card__title">Онлайн-страхование</h3>
+                            <p class="card__text">выезжающих за рубеж <br> и в поездках по России (ВЗР)</p>
+                        </div>
+                    </figure>
                 </a>
-                <a href="#" class="card">
-                    <div class="card__info">
-                        <p class="card__title">Антиклещ — <br> все включено, </p>    
-                        <p class="card__text">защита от всех <br>
+                <a href="#" class="tilter tilter--1 card">
+                    <figure class="tilter__figure">
+                        <div class="tilter__image card__img" style="background-image: url(img/forest.jpg)"></div>
+                        <div class="card__info">
+                            <h3 class="card__title">Антиклещ — <br> все включено, </h3>
+                            <p class="card__text">защита от всех <br>
                                 клещевых инфекций</p>
-                    </div>
-                    <div class="card__img" style="background-image: url(img/forest.jpg)"></div>
+                        </div>
+                    </figure>
                 </a>
             </div>
         </div>
@@ -101,6 +122,8 @@
         </div>
     </div>
 </footer>
+
+</main>
 
 <!-- END CONTENT  -->
 //= template/footer.html
