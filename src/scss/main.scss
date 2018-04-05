@@ -190,6 +190,9 @@ h2 {
 	}
 	&__figure {
 	  position: relative;
+	  &.trans {
+		transition: all .2s;
+	  }
 	  & > * {transform: translateZ(0px);}
 	  &::before {
 		content: '';
