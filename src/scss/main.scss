@@ -1,0 +1,283 @@
+@charset "UTF-8";
+@import 'mixins';
+
+@include font-face("MuseoSansCyrl", "../fonts/MuseoSansCyrl300/MuseoSansCyrl300", normal); 
+@include font-face("MuseoSansCyrl", "../fonts/MuseoSansCyrl700/MuseoSansCyrl700", 700); 
+
+/*** MIXINS USAGE ***
+
+	@include font-face("fontName", "../fonts/fontPath/fontName", normal); 
+
+	@include xs(12);
+	@include sm(12);
+	@include md(12);
+	@include lg(12);
+
+	@include r(768);
+	@include rmin(768);
+
+	@include trans / trans($what $dur $easing);
+	@include cover;
+
+	@include centerX / centerXa
+	@include centerY / centerYa
+
+	@include overlay($opacity)
+***/
+
+$gray: #263238;
+$blue: #004287;
+$red: #C71617;
+
+.icon {
+	display: inline-block;
+	width: 2em;
+	height: 2em;
+	font-size: 30px;
+}
+
+body {
+	font-family: 'MuseoSansCyrl', sans-serif;
+	font-size: 14px;
+	color: $gray;
+}
+
+a {color: $red;}
+
+h2 {
+	font-weight: 700;
+	color: $blue;
+	font-size: 24px;
+	@include r(767) {font-size: 20px;}
+	@include r(413) {font-size: 25px;}
+}
+
+.container-fluid {max-width: 1140px;}
+
+.header {
+	padding: 30px 0 21px;	
+	@include r(413) {padding: 13px 0 10px;}
+	&__logo {
+		display: inline-block;
+		padding-left: 15px;
+		margin-left: 0;
+		svg {
+			fill: $blue;
+			width: 207px;
+			@include r(767) {width: 130px;}
+			@include r(413) {width: 120px;}
+		}
+	}
+	&__contacts {
+		float: right;
+		margin-right: 0;
+		@include r(413) {margin-top: 10px;}
+		span {
+			display: block;
+			margin-top: 4px;
+			margin-bottom: -11px;
+			@include r(1279) {margin-bottom: -4px;}
+			@include r(413) {font-size: 11px;}
+		}
+	}
+	&__phone {
+		font-weight: 700;
+		font-size: 36px;
+		color: $gray;
+		&:hover, &:focus {
+			text-decoration: none;
+			color: $gray;
+		}
+		@include r(1279) {margin-right: 15px;}
+		@include r(767) {font-size: 28px;}
+		@include r(413) {font-size: 20px;}
+	}
+}
+
+.banner {
+	@include cover;	
+	position: relative;
+	.col-xs-12 {
+		height: 482px;
+		@include r(1023) {height: 400px;}
+		@include r(767) {height: 340px;}
+		@include r(413) {height: 250px;}
+	}
+	&__title {
+		color: #fff;
+		font-weight: 700;
+		font-size: 48px;
+		@include centerYa;
+		margin-left: 0;
+		margin-bottom: 0;
+		line-height: 1;
+		opacity: 0;
+		transition: all .7s ease-in-out;
+		transform: translateY(-60%);
+		@include r(1279) {font-size: 37px;}
+		@include r(413) {font-size: 30px;}
+		&.show {
+			transform: translateY(-50%);
+			opacity: 1;
+		}
+	}
+}
+
+.icons {	
+	padding: 45px 8.3% 37px;
+	@include r(1280) {padding: 45px 4.3% 37px;}
+	@include r(1280) {padding: 45px 0 37px;}
+	h2 {
+		display: block;
+		text-align: center;
+		width: 100%;
+		margin-bottom: 29px;
+	}
+	.col-xs-12 {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+}
+
+.iconBlock {
+	@include r(767) {
+		width: 100%;
+		margin-bottom: 15px;
+		display: flex;
+		align-items: center;
+		p {margin: 0;}
+	}
+	&__icon {
+		fill: $red;
+		font-size: 35px;
+		margin-bottom: 3px;
+		@include r(767) {
+			float: left;
+			margin-right: 15px;
+			font-size: 21px;
+		}
+	}
+}
+
+.cardsWrap {
+	background: #ECEFF1;
+	padding: 64px 0 79px;
+	@include r(767) {padding-bottom: 40px;}	
+	.col-xs-12 {
+		display: flex;
+		justify-content: space-between;
+		@include r(767) {flex-wrap:wrap;}
+	}
+}
+
+.card {
+	height: 275px;
+	@include xs(12);
+	@include sm(5.85);
+	@include md(5.85);
+	@include lg(5.85);
+	border-radius: 25px;
+	background: #fff;
+	padding: 0;	
+	position: relative;
+	box-shadow: 0 19px 52px -12px rgba(0,0,0,.4);
+	@include r(1023) {height: 200px;}
+	@include r(767) {margin-bottom: 30px;}	
+	@include r(413) {height: 230px;}	
+	&:hover, &:focus {
+		text-decoration: none;
+		.card__img {background-size: 280%;}
+	}
+	&__info {
+		width: 53%;
+		float: left;
+		padding-left: 40px;
+		@include centerY;
+		@include r(1023) {padding-left: 25px;}
+		@include r(767) {padding-left: 19px;}
+	}
+	&__title {
+		color: $red;
+		font-weight: 700;
+		font-size: 20px;
+		margin-bottom: 0;
+		@include r(1023) {
+			font-size: 16px;
+			margin-bottom: 5px;
+		}
+	}
+	&__text {
+		color: $blue;
+		font-size: 15px;
+		line-height: 1.1;
+		margin-bottom: 0;
+		@include r(1023) {font-size: 13px;}
+		@include r(413) { br {display: none;}}
+	}
+	&__img {
+		background-repeat: no-repeat;
+		background-position: 13% 63%;
+		background-size: 260%;
+		width: 47%;
+		height: 100%;
+		float: right;
+		border-top-right-radius: 25px;
+		border-bottom-right-radius: 25px;
+		transition: all 0.6s ease-in-out;
+	}
+}
+
+.footer {
+	padding: 65px 0;
+	@include r(767) {padding: 35px 0;}
+	&__logo {
+		@include xs(12);
+		@include sm(3);
+		@include md(3);
+		@include lg(3);
+		margin-left: 0;
+		@include r(1023) {padding-right: 0;}
+		svg	{
+			fill: $blue;
+			width: 208px;
+			margin-bottom: 35px;
+			@include r(1023) {width: 100%;}
+			@include r(767) {
+				width: 40%;
+				margin-bottom: 7px;
+			}
+		}
+		p {
+			color: #78909C;
+			line-height: 1.3;
+			font-size: 11px;
+		}
+	}
+	&__text {
+		@include xs(12);
+		@include sm(6.6);
+		@include md(7);
+		@include lg(7);
+		font-size: 11px;
+		p {
+			line-height: 1.1;
+			margin-bottom: 15px;
+		}
+		@include r(1023) {
+			p br {display: none;}
+		}
+	}
+	&__dev {
+		@include xs(12);
+		@include sm(2.4);
+		@include md(1.9);
+		@include lg(1.9);
+		p {
+			font-size: 12px;
+			margin-top: -3px;
+		}
+		@include r(767) {margin-top: 15px;}
+	}
+}
+
